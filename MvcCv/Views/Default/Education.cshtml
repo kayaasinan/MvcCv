@@ -1,0 +1,18 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblEducation>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Eğitim Hayatım</h2>
+    @foreach (var z in Model)
+    {
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@z.Title</h3>
+                <div class="subheading mb-3">@z.SubHead1</div>
+                <div>@z.SubHead2</div>
+                <p>@z.GPA</p>
+            </div>
+            @*<div class="flex-shrink-0"><span class="text-primary">August 2006 - May 2010</span></div>*@
+        </div>
+    }
+</div>
