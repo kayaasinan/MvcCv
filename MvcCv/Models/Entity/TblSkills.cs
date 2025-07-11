@@ -16,5 +16,6 @@ namespace MvcCv.Models.Entity
     {
         public int Id { get; set; }
         public string Skills { get; set; }
+        public Nullable<byte> Ratio { get; set; }
     }
 }

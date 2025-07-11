@@ -79,6 +79,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Skills" Type="varchar" MaxLength="100" />
+          <Property Name="Ratio" Type="tinyint" />
         </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
@@ -168,6 +169,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Skills" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Ratio" Type="Byte" />
         </EntityType>
         <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" />
@@ -263,6 +265,7 @@
           <EntitySetMapping Name="TblSkills">
             <EntityTypeMapping TypeName="DbCvModel.TblSkills">
               <MappingFragment StoreEntitySet="TblSkills">
+                <ScalarProperty Name="Ratio" ColumnName="Ratio" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Skills" ColumnName="Skills" />
               </MappingFragment>

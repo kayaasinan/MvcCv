@@ -1,0 +1,25 @@
+﻿@model MvcCv.Models.Entity.TblExperiences
+@{
+    ViewBag.Title = "GetExperienceById";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Deneyim Güncelleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Id")
+    @Html.TextBoxFor(x => x.Id, new {@class="form-control"})
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.Label("Alt Başlık")
+    @Html.TextBoxFor(x => x.SubHead, new { @class = "form-control" })
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" ,rows=5 })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+
