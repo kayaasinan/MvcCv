@@ -1,0 +1,29 @@
+﻿@model MvcCv.Models.Entity.TblEducation
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Eğitim Düzenleme Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Üniversite")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "")
+    <br />
+    @Html.Label("Fakülte")
+    @Html.TextBoxFor(x => x.SubHead1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SubHead1, "")
+    <br />
+    @Html.Label("Bölüm")
+    @Html.TextBoxFor(x => x.SubHead2, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SubHead2, "")
+    <br />
+    @Html.Label("Ortalama")
+    @Html.TextBoxFor(x => x.GPA, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.GPA, "")
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>
+
