@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace MvcCv.Controllers
 {
+    
     public class EducationController : Controller
     {
         // GET: Education

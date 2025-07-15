@@ -18,7 +18,7 @@ namespace MvcCv.Controllers
         }
         public PartialViewResult SocialMedia()
         {
-            var socialMedia = db.TblSocialMedia.ToList();
+            var socialMedia = db.TblSocialMedia.Where(x => x.Status == true).ToList();
             return PartialView(socialMedia);
         }
         public PartialViewResult Experience()

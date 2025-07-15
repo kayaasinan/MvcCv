@@ -41,6 +41,14 @@ namespace MvcCv.Controllers
             values.SMName=media.SMName;
             values.SMLink=media.SMLink;
             values.SMIcon=media.SMIcon;
+            values.Status=true;
+            repo.TUpdate(values);
+            return RedirectToAction("Index");
+        }
+        public ActionResult RemoveSocialMedia(int id)
+        {
+            var values=repo.Find(x=>x.Id==id);
+            values.Status=false;
             repo.TUpdate(values);
             return RedirectToAction("Index");
         }
