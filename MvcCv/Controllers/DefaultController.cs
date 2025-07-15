@@ -16,6 +16,11 @@ namespace MvcCv.Controllers
             var values = db.TblAbout.ToList();
             return View(values);
         }
+        public PartialViewResult SocialMedia()
+        {
+            var socialMedia = db.TblSocialMedia.ToList();
+            return PartialView(socialMedia);
+        }
         public PartialViewResult Experience()
         {
             var experiences = db.TblExperiences.ToList();

@@ -1,25 +1,34 @@
-﻿
+﻿@using MvcCv.Models.Entity
+@model List<TblAbout>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Hakkımda Menüsü</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>Id</th>
-        <th>Ad</th>
-        <th>Şehir</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>Mehmet</td>
-        <td>Kayseri</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Veli</td>
-        <td>Bitlis</td>
-    </tr>
-</table>
 
+<br />
+<h2>Hakkımda Sayfası</h2>
+<br />
+@foreach (var y in Model)
+{
+    <form method="post">
+        <input type="hidden" name="ID" value="@y.Id" />
+
+        <label>Ad</label>
+        <input type="text" class="form-control" name="Name" value="@y.Name" />
+        <label>Soyad</label>
+        <input type="text" class="form-control" name="SurName" value="@y.SurName" />
+        <label>Adres</label>
+        <input type="text" class="form-control" name="Address" value="@y.Address" />
+        <label>Telefon</label>
+        <input type="text" class="form-control" name="Phone" value="@y.Phone" />
+        <label>e-Mail</label>
+        <input type="text" class="form-control" name="Mail" value="@y.Mail" />
+        <label>Açıklama</label>
+        <textarea class="form-control" name="Description" rows="5">@y.Description</textarea>
+        <label>Resim</label>
+        <input type="text" class="form-control" name="Images" value="@y.Images" />
+        <br />
+        <button class="btn btn-info">Güncelle</button>
+    </form>
+}

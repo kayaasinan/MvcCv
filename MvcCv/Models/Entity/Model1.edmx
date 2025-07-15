@@ -81,6 +81,17 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Skills" Type="varchar" MaxLength="100" />
           <Property Name="Ratio" Type="tinyint" />
+          <Property Name="Icon" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SMName" Type="varchar" MaxLength="30" />
+          <Property Name="SMLink" Type="varchar" MaxLength="50" />
+          <Property Name="SMIcon" Type="varchar" MaxLength="30" />
+          <Property Name="Status" Type="bit" />
         </EntityType>
         <EntityContainer Name="DbCvModelStoreContainer">
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" Schema="dbo" store:Type="Tables" />
@@ -91,6 +102,7 @@
           <EntitySet Name="TblExperiences" EntityType="Self.TblExperiences" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblInterests" EntityType="Self.TblInterests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSkills" EntityType="Self.TblSkills" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSocialMedia" EntityType="Self.TblSocialMedia" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -172,6 +184,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Skills" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Ratio" Type="Byte" />
+          <Property Name="Icon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="DbCvEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblAbout" EntityType="Self.TblAbout" />
@@ -182,7 +195,18 @@
           <EntitySet Name="TblExperiences" EntityType="Self.TblExperiences" />
           <EntitySet Name="TblInterests" EntityType="Self.TblInterests" />
           <EntitySet Name="TblSkills" EntityType="Self.TblSkills" />
+          <EntitySet Name="TblSocialMedia" EntityType="DbCvModel.TblSocialMedia" />
         </EntityContainer>
+        <EntityType Name="TblSocialMedia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SMName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SMLink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SMIcon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -268,9 +292,21 @@
           <EntitySetMapping Name="TblSkills">
             <EntityTypeMapping TypeName="DbCvModel.TblSkills">
               <MappingFragment StoreEntitySet="TblSkills">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
                 <ScalarProperty Name="Ratio" ColumnName="Ratio" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Skills" ColumnName="Skills" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSocialMedia">
+            <EntityTypeMapping TypeName="DbCvModel.TblSocialMedia">
+              <MappingFragment StoreEntitySet="TblSocialMedia">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SMIcon" ColumnName="SMIcon" />
+                <ScalarProperty Name="SMLink" ColumnName="SMLink" />
+                <ScalarProperty Name="SMName" ColumnName="SMName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -12,11 +12,12 @@ namespace MvcCv.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TblSkills
+    public partial class TblSocialMedia
     {
         public int Id { get; set; }
-        public string Skills { get; set; }
-        public Nullable<byte> Ratio { get; set; }
-        public string Icon { get; set; }
+        public string SMName { get; set; }
+        public string SMLink { get; set; }
+        public string SMIcon { get; set; }
+        public Nullable<bool> Status { get; set; }
     }
 }

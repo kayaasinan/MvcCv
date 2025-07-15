@@ -5,7 +5,9 @@
     <h2 class="mb-5">Hobilerim</h2>
     @foreach (var y in Model)
     {
-        <p>@y.Description1.</p>
-        <p class="mb-0">@y.Description2.</p>
+        <div class="interest-item mb-4">
+            <h4 class="text-primary">• @y.Description1</h4>
+            <p class="mb-0">@y.Description2</p>
+        </div>
     }
 </div>
