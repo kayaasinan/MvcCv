@@ -131,6 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CertificateController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
@@ -188,6 +189,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AboutRepository.cs" />
+    <Compile Include="Repositories\AdminRepository.cs" />
     <Compile Include="Repositories\CertificateRepository.cs" />
     <Compile Include="Repositories\ContactRepository.cs" />
     <Compile Include="Repositories\EducationRepository.cs" />
@@ -2502,6 +2504,9 @@
     <Content Include="Views\SocialMedia\Index.cshtml" />
     <Content Include="Views\SocialMedia\UpdateSocialMedia.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AddAdmin.cshtml" />
+    <Content Include="Views\Admin\UpdateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
