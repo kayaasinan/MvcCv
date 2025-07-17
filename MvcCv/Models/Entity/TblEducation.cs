@@ -11,13 +11,19 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class TblEducation
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Title { get; set; }
+        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string SubHead1 { get; set; }
+        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string SubHead2 { get; set; }
+        [Required(ErrorMessage = "Bu alan zorunludur!")]
+        [StringLength(10, ErrorMessage = "En fazla 10 karakter olabilir")]
         public string GPA { get; set; }
         public string Date { get; set; }
     }

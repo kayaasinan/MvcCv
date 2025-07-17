@@ -37,6 +37,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult UpdateSocialMedia(TblSocialMedia media)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateSocialMedia");
+            }
             var values = repo.Find(x=>x.Id==media.Id);
             values.SMName=media.SMName;
             values.SMLink=media.SMLink;

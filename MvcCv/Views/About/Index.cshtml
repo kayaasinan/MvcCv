@@ -7,28 +7,68 @@
 
 
 <br />
-<h2>Hakkımda Sayfası</h2>
-<br />
-@foreach (var y in Model)
-{
-    <form method="post">
-        <input type="hidden" name="ID" value="@y.Id" />
+<h2 style="text-align: center; font-weight: bold; color: #343a40;">Hakkımda Sayfası - Admin Paneli</h2>
 
-        <label>Ad</label>
-        <input type="text" class="form-control" name="Name" value="@y.Name" />
-        <label>Soyad</label>
-        <input type="text" class="form-control" name="SurName" value="@y.SurName" />
-        <label>Adres</label>
-        <input type="text" class="form-control" name="Address" value="@y.Address" />
-        <label>Telefon</label>
-        <input type="text" class="form-control" name="Phone" value="@y.Phone" />
-        <label>e-Mail</label>
-        <input type="text" class="form-control" name="Mail" value="@y.Mail" />
-        <label>Açıklama</label>
-        <textarea class="form-control" name="Description" rows="5">@y.Description</textarea>
-        <label>Resim</label>
-        <input type="text" class="form-control" name="Images" value="@y.Images" />
-        <br />
-        <button class="btn btn-info">Güncelle</button>
-    </form>
-}
+<body style="background-color: #f8f8f8; ">
+    <section id="mu-contact" style="  display: inline; float: left; padding: 5px 0; width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-contact-area" style=" display: inline; float: left; width: 100%;">
+                        <div class="mu-contact-content">
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="mu-contact-left" style="  display: inline; float: left; width: 100%;">
+                                        <div id="form-messages"></div>
+                                        <!-- Start contact form -->
+                                        @foreach (var y in Model)
+                                        {
+                                            <form id="ajax-contact" method="post" class="mu-contact-form" style="background-color: #ffffff;; padding: 20px; border-radius: 10px;">
+                                                <input type="hidden" name="ID" value="@y.Id" />
+                                                <div class="form-group">
+                                                    <label for="name" style="font-weight:600;">Ad</label>
+                                                    <input style="border-radius:10px;" type="text" class="form-control" id="name" name="Name" value="@y.Name" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name" style="font-weight:600;">Soyad</label>
+                                                    <input style="border-radius:10px;" type="text" class="form-control" id="surname" name="SurName" value="@y.SurName" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="address" style="font-weight:600;">Adres</label>
+                                                    <input style="border-radius:10px;" type="text" class="form-control" id="address" name="Address" value="@y.Address" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phone" style="font-weight:600;">Telefon</label>
+                                                    <input style="border-radius:10px;" type="text" class="form-control" id="phone" name="Phone" value="@y.Phone" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="mail" style="font-weight:600;">Mail</label>
+                                                    <input style="border-radius:10px;" type="text" class="form-control" id="mail" name="Mail" value="@y.Mail" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message" style="font-weight:600;">Açıklama</label>
+                                                    <textarea style="border-radius:10px;" class="form-control" id="description" name="Description" cols="30" rows="4" required>@y.Description</textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="subject" style="font-weight:600;">Resim</label>
+                                                    <input style="border-radius:10px;" type="text" class="form-control" id="images" name="Images" value="@y.Images" required>
+                                                </div>
+                                                <br />
+                                                <button type="submit" style="background-color: coral; color: ghostwhite; border-radius: 10px; display: inline-block; transition: all 0.3s ease; padding: 10px; border: none;"
+                                                        onmouseover="this.style.backgroundColor='#bd5d38'; this.style.transform='scale(1.1)';"
+                                                        onmouseout="this.style.backgroundColor='coral'; this.style.transform='scale(1)';">
+                                                    Güncelle
+                                                </button>
+                                            </form>
+                                        }
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

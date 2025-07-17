@@ -4,6 +4,11 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
+<br />
+<h2 style="text-align: center; font-weight: bold; color: #343a40;">Hobi ve İlgi Alanları Listesi - Admin Paneli</h2>
+<br />
+
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
@@ -13,19 +18,18 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <div>
-                                <h2>Hobi ve İlgi Alanları Sayfası</h2>
-                            </div>
                             <div class="tab-pane" id="timeline">
                                 <br />
-                                <div class="timeline timeline-inverse">
+                                <div class="timeline">
+                                    <!-- Timeline entry -->
                                     @foreach (var z in Model)
                                     {
                                         <div>
-
+                                            <i class="fas fa-star bg-blue"></i>
                                             <div class="timeline-item">
-
-                                                <h2 class="timeline-header"><a href="#">@z.Description1</a></h2>
+                                                <h3 class="timeline-header">
+                                                    <a href="#">@z.Description1</a>
+                                                </h3>
                                                 <div class="timeline-body">
                                                     @z.Description2
                                                 </div>

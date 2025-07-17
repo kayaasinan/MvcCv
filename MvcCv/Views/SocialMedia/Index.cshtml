@@ -5,7 +5,9 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-
+<br />
+<h2 style="text-align: center; font-weight: bold; color: #343a40;">Sosyal Medya Listesi - Admin Paneli</h2>
+<br />
 
 <!DOCTYPE html>
 <html>
@@ -18,9 +20,6 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Sosyal Medya Hesaplarım</h3>
-                            </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">Sosyal Medya Ekle</button>
@@ -46,7 +45,7 @@
                                                 <td>@x.SMName </td>
                                                 @*<td>@x.SMLink</td>
                                                     <td>@x.SMIcon</td>*@
-                                            <td>@(x.Status==true ? "Aktif" : "Pasif")</td>
+                                                <td>@(x.Status==true ? "Aktif" : "Pasif")</td>
                                                 <td>
                                                     <a href="/SocialMedia/UpdateSocialMedia/@x.Id" class="btn btn-sm btn-outline-warning" title="Düzenle">
                                                         <i class="fa fa-edit"></i> Düzenle

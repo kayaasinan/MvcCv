@@ -9,15 +9,19 @@
 <br />
 <form method="post">
     @Html.Label("Id")
-    @Html.TextBoxFor(x => x.Id, new {@class="form-control"})
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", })
     @Html.Label("Başlık")
-    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessageFor(x => x.Title, "")
     @Html.Label("Alt Başlık")
-    @Html.TextBoxFor(x => x.SubHead, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.SubHead, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessageFor(x => x.SubHead, "")
     @Html.Label("Tarih")
-    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessageFor(x => x.Date, "")
     @Html.Label("Açıklama")
-    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" ,rows=5 })
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = 5, required = "required" })
+    @Html.ValidationMessageFor(x => x.Description, "")
     <br />
     <button class="btn btn-success">Güncelle</button>
 </form>

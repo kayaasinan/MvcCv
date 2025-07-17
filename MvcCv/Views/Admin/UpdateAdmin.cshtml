@@ -11,9 +11,11 @@
     @Html.Label("Id")
     @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
     @Html.Label("Kullanıcı Adı")
-    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessageFor(x => x.UserName, "")
     @Html.Label("Şifre")
-    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessageFor(x => x.Password, "")
     <br />
     <button class="btn btn-success">Güncelle</button>
 </form>

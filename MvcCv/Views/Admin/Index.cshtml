@@ -6,25 +6,47 @@
 }
 
 <br />
-<h2>Kullanıcı Login İşlemleri</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>Id</th>
-        <th>Kullanıcı Adı</th>
-        <th>Düzenle</th>
-        <th>Sil</th>
+<h2 style="text-align: center; font-weight: bold; color: #343a40;">Hesap Ayarları - Admin Paneli</h2>
+<br />
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <br />
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Kullanıcı Adı</th>
+                                        <th>Düzenle</th>
+                                        <th>Sil</th>
 
-    </tr>
-    @foreach (var y in Model)
-    {
-        <tr>
-            <td>@y.Id</td>
-            <td>@y.UserName</td>
-            <td><a href="/Admin/UpdateAdmin/@y.Id" class="btn btn-warning">Düzenle</a> </td>
-            <td><a href="/Admin/RemoveAdmin/@y.Id" class="btn btn-danger">Sil</a> </td>
-
-        </tr>
-    }
-</table>
-<a href="/Admin/AddAdmin" class="btn btn-primary">Admin Ekle</a>
-
+                                    </tr>
+                                    @foreach (var y in Model)
+                                    {
+                                        <tr>
+                                            <td>@y.Id</td>
+                                            <td>@y.UserName</td>
+                                            <td><a href="/Admin/UpdateAdmin/@y.Id" class="btn btn-warning">Düzenle</a> </td>
+                                            <td><a href="/Admin/RemoveAdmin/@y.Id" class="btn btn-danger">Sil</a> </td>
+                                        </tr>
+                                    }
+                                </table>
+                                <a href="/Admin/AddAdmin" class="btn btn-primary">Admin Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>

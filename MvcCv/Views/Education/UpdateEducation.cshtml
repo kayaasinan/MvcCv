@@ -9,19 +9,19 @@
 <br />
 <form method="post">
     @Html.Label("Üniversite")
-    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", required = "required" })
     @Html.ValidationMessageFor(x => x.Title, "")
     <br />
     @Html.Label("Fakülte")
-    @Html.TextBoxFor(x => x.SubHead1, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.SubHead1, new { @class = "form-control", required = "required" })
     @Html.ValidationMessageFor(x => x.SubHead1, "")
     <br />
     @Html.Label("Bölüm")
-    @Html.TextBoxFor(x => x.SubHead2, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.SubHead2, new { @class = "form-control", required = "required" })
     @Html.ValidationMessageFor(x => x.SubHead2, "")
     <br />
     @Html.Label("Ortalama")
-    @Html.TextBoxFor(x => x.GPA, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.GPA, new { @class = "form-control" , maxlength = "10" })
     @Html.ValidationMessageFor(x => x.GPA, "")
     <br />
     <button class="btn btn-info">Güncelle</button>

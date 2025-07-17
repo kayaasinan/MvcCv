@@ -44,6 +44,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult GetExperienceById(TblExperiences entity)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("GetExperienceById");
+            }
             TblExperiences values = repo.Find(x => x.Id == entity.Id);
             values.Title = entity.Title;
             values.SubHead = entity.SubHead;

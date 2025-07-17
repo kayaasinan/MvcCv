@@ -27,6 +27,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult UpdateCertificate(TblCertificates certificate)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateCertificate");
+            }
             var values = repo.Find(x => x.Id == certificate.Id);
             values.Date= certificate.Date;
             values.Description= certificate.Description;

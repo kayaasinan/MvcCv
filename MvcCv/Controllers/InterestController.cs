@@ -27,6 +27,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult UpdateInterest(TblInterests interest)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateInterest");
+            }
             var values = repo.Find(x => x.Id == interest.Id);
             values.Description1 = interest.Description1;
             values.Description2 = interest.Description2;

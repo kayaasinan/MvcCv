@@ -21,6 +21,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult Index(TblAbout p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
             var value = repo.Find(x => x.Id == p.Id);
             value.Name = p.Name;
             value.SurName = p.SurName;

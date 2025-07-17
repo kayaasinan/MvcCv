@@ -43,6 +43,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult UpdateSkill(TblSkills skill)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateSkill");
+            }
             var values = repo.Find(x => x.Id == skill.Id);
             values.Skills = skill.Skills;
             values.Ratio = skill.Ratio;

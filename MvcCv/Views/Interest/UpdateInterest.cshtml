@@ -9,10 +9,12 @@
 <br />
 <form method="post">
     @Html.Label("Hobi Başlığı")
-    @Html.TextBoxFor(x => x.Description1, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Description1, new { @class = "form-control",required = "required" })
+    @Html.ValidationMessageFor(x => x.Description1, "")
     <br />
     @Html.Label("Tarih")
-    @Html.TextBoxFor(x => x.Description2, new { @class = "form-control" })
+    @Html.TextBoxFor(x => x.Description2, new { @class = "form-control", required = "required" })
+    @Html.ValidationMessageFor(x => x.Description2, "")
     <br />
     <button class="btn btn-warning">Güncelle</button>
 </form>

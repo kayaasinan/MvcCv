@@ -43,6 +43,10 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult UpdateAdmin(TblAdmins entity)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateAdmin");
+            }
             TblAdmins values = repo.Find(x => x.Id == entity.Id);
             values.UserName = entity.UserName;
             values.Password = entity.Password;

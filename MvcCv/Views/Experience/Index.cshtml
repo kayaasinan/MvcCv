@@ -6,27 +6,52 @@
 }
 
 <br />
-<h2>Deneyim Listesi</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>Id</th>
-        <th>Başlık</th>
-        <th>Alt Başlık</th>
-        <th>Tarih</th>
-        <th>Sil</th>
-        <th>Düzenle</th>
-    </tr>
-    @foreach(var y in Model)
-            {
-                <tr>
-                    <td>@y.Id</td>
-                    <td>@y.Title</td>
-                    <td>@y.SubHead</td>
-                    <td>@y.Date</td>
-                    <td><a href="/Experience/RemoveExperience/@y.Id" class="btn btn-danger">Sil</a> </td>
-                    <td><a href="/Experience/GetExperienceById/@y.Id" class="btn btn-warning">Düzenle</a> </td>
-                </tr>
-            }
-</table>
-<a href="/Experience/AddExperience" class="btn btn-primary">Deneyim Ekle</a>
+<h2 style="text-align: center; font-weight: bold; color: #343a40;">Deneyim Listesi - Admin Paneli</h2>
+<br />
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <br />
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Başlık</th>
+                                        <th>Alt Başlık</th>
+                                        <th>Tarih</th>
+                                        <th>Sil</th>
+                                        <th>Düzenle</th>
+                                    </tr>
+                                    @foreach (var y in Model)
+                                    {
+                                        <tr>
+                                            <td>@y.Id</td>
+                                            <td>@y.Title</td>
+                                            <td>@y.SubHead</td>
+                                            <td>@y.Date</td>
+                                            <td><a href="/Experience/RemoveExperience/@y.Id" class="btn btn-danger">Sil</a> </td>
+                                            <td><a href="/Experience/GetExperienceById/@y.Id" class="btn btn-warning">Düzenle</a> </td>
+                                        </tr>
+                                    }
+                                </table>
+                                <a href="/Experience/AddExperience" class="btn btn-primary">Deneyim Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>
+
 

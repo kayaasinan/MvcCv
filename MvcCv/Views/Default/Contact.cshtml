@@ -1,19 +1,70 @@
-﻿<div class="resume-section-content">
-    <form method="post">
-        <h2 class="mb-5">Bana Ulaşın</h2>
-        <label>Ad Soyad</label>
-        <input type="text" class="form-control" name="FullName" />
+﻿<body style="background-color: #f8f8f8; ">
+    <section id="mu-contact" style=" display: inline; float: left; padding: 80px 0 5px 0; width: 100%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-contact-area" style=" display: inline; float: left; width: 100%;">
 
-        <label>E-Mail Adresi</label>
-        <input type="text" class="form-control" name="Mail" />
+                        <div class="mu-title" style="padding-bottom: 100px;">
 
-        <label>Konu</label>
-        <input type="text" class="form-control" name="Subject" />
+                            <h2 style="color: #bd5d38">Benimle İletişime Geçebilirsiniz</h2>
+                            <span class="mu-subtitle">Aşağıdaki formdan benimle iletişime geçebilir ve bana ulaşabileceğiniz iletişim bilgilerini bulabilirsiniz.</span>
+                        </div>
 
-        <label>Mesaj</label>
-        <input type="text" class="form-control" name="Message" />
-        <br />
-        <button class="btn btn-info btn-lg">Mesaj Gönder</button>
-    </form>
-</div>
+                        <div class="mu-contact-content">
+                            <div class="row">
 
+                                <div class="col-md-6">
+                                    <div class="mu-contact-left" style="  display: inline; float: left; width: 100%;">
+                                        <!-- Email message div -->
+                                        <div id="form-messages"></div>
+                                        <!-- Start contact form -->
+                                        <form id="ajax-contact" method="post" class="mu-contact-form">
+                                            <div class="form-group">
+                                                <label for="name" style="font-weight:600;">Ad Soyad</label>
+                                                <input style="border-radius:10px;" type="text" class="form-control" id="name" name="FullName" placeholder="Lütfen adınızı ve soyadınızı giriniz" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email" style="font-weight:600;">Email Adresiniz</label>
+                                                <input style="border-radius:10px;" type="email" class="form-control" id="email" name="Mail" placeholder="Lütfen Mail adresinizi giriniz." required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="subject" style="font-weight:600;">Konu</label>
+                                                <input style="border-radius:10px;" type="text" class="form-control" id="subject" name="Subject" placeholder="Lütfen mesaj konu başlığı giriniz" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message" style="font-weight:600;">Message</label>
+                                                <textarea style="border-radius:10px;" class="form-control" id="message" name="Message" cols="30" rows="10" placeholder="Mesaj içeriğini bu alana yazabilirsiniz." required></textarea>
+                                            </div>
+                                            <br />
+                                            <button type="submit" style="background-color: coral; color: ghostwhite; border-radius: 10px; display: inline-block; transition: all 0.3s ease; padding: 10px; border: none;"
+                                                    onmouseover="this.style.backgroundColor='#bd5d38'; this.style.transform='scale(1.1)';"
+                                                    onmouseout="this.style.backgroundColor='coral'; this.style.transform='scale(1)';">
+                                                Mesaj Gönder
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="mu-contact-right" style="display: inline; float: left; margin-top: 100px ; padding: 0 100px; width: 100%;">
+                                        <div class="mu-contact-widget" style="display: inline; float: left; margin-bottom: 25px; width: 100%;">
+                                            <h3 style="margin-top: 0px; padding-bottom: 10px; display: inline-block; color: #bd5d38">İLETİŞİM BİLGİLERİM</h3>
+                                            <address style="margin-top: 20px;">
+                                                <p style="letter-spacing: 0.5px;"><i style=" margin-right: 10px; width: 20px; text-align: center;" class="fa fa-phone"></i> (530) 072 6868</p>
+                                                <p style="letter-spacing: 0.5px;"><i style=" margin-right: 10px; width: 20px; text-align: center;" class="fas fa-envelope"></i>kayaasinan@gmail.com</p>
+                                                <p style="letter-spacing: 0.5px;"><i style=" margin-right: 10px; width: 20px; text-align: center;" class="fa fa-map-marker"></i>Eyüpsultan / İstanbul</p>
+                                            </address>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>

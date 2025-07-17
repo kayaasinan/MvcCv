@@ -11,11 +11,14 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblInterests
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Description1 { get; set; }
+        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Description2 { get; set; }
     }
 }
