@@ -9,6 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+## İgnore edildi.....
+/web.config
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
