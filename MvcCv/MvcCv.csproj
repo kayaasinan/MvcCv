@@ -2002,7 +2002,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\Abaout-Admin.png" />
+    <Content Include="Images\About-Admin.png" />
     <Content Include="Images\About.png" />
     <Content Include="Images\Certificate-Admin.png" />
     <Content Include="Images\Certificate.png" />
