@@ -1,4 +1,5 @@
-﻿using MvcCv.Models.Entity;
+﻿using MvcCv.Helper;
+using MvcCv.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,14 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult Index(TblAdmins admin)
         {
+            if (!string.IsNullOrEmpty(admin.Password))
+            {
+                var aESCipher = new AESCipher("sinankaya");
+                var hashPassword = aESCipher.Encrypt(admin.Password);
+
+                admin.Password = hashPassword;
+            }
+
             var loginInfo = db.TblAdmins.FirstOrDefault(x => x.UserName == admin.UserName && x.Password == admin.Password);
             if (loginInfo != null)
             {

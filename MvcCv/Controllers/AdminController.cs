@@ -1,4 +1,5 @@
-﻿using MvcCv.Models.Entity;
+﻿using MvcCv.Helper;
+using MvcCv.Models.Entity;
 using MvcCv.Repositories;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,11 @@ namespace MvcCv.Controllers
         [HttpPost]
         public ActionResult AddAdmin(TblAdmins admin)
         {
+            if (!string.IsNullOrEmpty(admin.Password))
+            {
+                var aESCipher = new AESCipher("sinankaya");
+                admin.Password = aESCipher.Encrypt(admin.Password);
+            }
             repo.TAdd(admin);
             return RedirectToAction("Index");
         }
@@ -47,6 +53,13 @@ namespace MvcCv.Controllers
             {
                 return View("UpdateAdmin");
             }
+
+            if (!string.IsNullOrEmpty(entity.Password))
+            {
+                var aESCipher = new AESCipher("sinankaya");
+                entity.Password = aESCipher.Encrypt(entity.Password);
+            }
+
             TblAdmins values = repo.Find(x => x.Id == entity.Id);
             values.UserName = entity.UserName;
             values.Password = entity.Password;

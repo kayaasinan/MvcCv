@@ -11,18 +11,13 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TblContacts
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string FullName { get; set; }
-        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Mail { get; set; }
-        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Subject { get; set; }
-        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Message { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
     }

@@ -11,16 +11,12 @@ namespace MvcCv.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TblSkills
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Skills { get; set; }
-        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public Nullable<byte> Ratio { get; set; }
-        [Required(ErrorMessage = "Bu alan zorunludur!")]
         public string Icon { get; set; }
     }
 }
